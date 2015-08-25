@@ -1,0 +1,23 @@
+<% provide(:title, 'Dashboard') %>
+<h1>Dashboard</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+			<th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uploads.each do |upload| %>
+      <tr>
+        <td><%= upload.name %></td>
+        <td><%= upload.description %></td>
+				<td><%= upload.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
