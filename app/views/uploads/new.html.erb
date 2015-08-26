@@ -3,7 +3,7 @@
 	
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<%= form_for @upload do |f| %>
+		<%= form_for @upload, html: {multipart: true} do |f| %>
 			<%= render 'uploads/error_messages' %>
 
 			<%= f.label :name %>
@@ -14,6 +14,9 @@
 
 			<%= f.label :price %>
 			<%= f.number_field :price, step: 'any', class: 'form-control' %>
+
+			<%= f.label :file %>
+			<%= f.file_field :file, class: 'form-control'  %>
 
 			<%= f.submit "Submit file", class: "btn btn-primary" %>
 		<% end %>

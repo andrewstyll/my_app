@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Description</th>
 			<th>Price</th>
+			<th>Status</th>
     </tr>
   </thead>
 
@@ -16,6 +17,7 @@
         <td><%= upload.name %></td>
         <td><%= upload.description %></td>
 				<td><%= upload.price %></td>
+				<td><%= upload.file.url %></td>
       </tr>
     <% end %>
   </tbody>

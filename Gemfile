@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails',        	'4.2.2'
+gem 'ruby-filemagic', '~> 0.7.0'
+gem 'paperclip', 			'~> 4.3'
 gem 'stripe', 				:git => 'https://github.com/stripe/stripe-ruby'
 gem 'bootstrap-sass',	'3.2.0.0'
 gem 'sass-rails',  	 	'5.0.2'

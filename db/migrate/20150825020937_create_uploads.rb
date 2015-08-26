@@ -5,7 +5,7 @@ class CreateUploads < ActiveRecord::Migration
       t.text :description
       t.float :price
       t.string :url
-      t.string :status
+      t.string :current_status
 
       t.timestamps null: false
     end
