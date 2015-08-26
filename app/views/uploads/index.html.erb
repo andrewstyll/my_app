@@ -17,7 +17,13 @@
         <td><%= upload.name %></td>
         <td><%= upload.description %></td>
 				<td><%= upload.price %></td>
-				<td><%= upload.file.url %></td>
+				<td><%= upload.current_status %></td>
+				<td>
+					<% if upload.current_status != "Payed" %>
+						<%= link_to "Pay here", upload_pay_path(upload), class: "btn btn-xs btn-primary" %>
+					<% end %>
+				</td>
+				</form>
       </tr>
     <% end %>
   </tbody>

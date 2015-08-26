@@ -1,0 +1,37 @@
+<% provide(:title, 'Pay') %>
+<h1>Pay</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+			<th>Price</th>
+			<th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+			<tr>
+        <td><%= @upload.name %></td>
+        <td><%= @upload.description %></td>
+				<td><%= @upload.price %></td>
+				<td><%= @upload.current_status %></td>
+				<td><form action="<%= upload_payment_token_path(@upload) %>" method="POST">
+						<input type='hidden' name='upload_id' value='<%= @upload.id %>'>
+				  	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							data-key="pk_test_gsT2ktTl82MKmR6hLPl5qcaB"
+							data-amount= "<%= (@upload.price*100).to_s%>"
+							data-name="Print <%= @upload.name %>"
+							data-description="<%= @upload.description %>"
+							data-image="/128x128.png"
+							data-locale="auto">
+					 	</script>
+					</form>
+				</td>
+				</form>
+      </tr>
+  </tbody>
+</table>
+
+
